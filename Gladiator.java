@@ -7,6 +7,7 @@ public class Gladiator {
     public Integer rage;
     public Integer damageHigh;
     public Integer damageLow;
+    Random rand = new Random();
 
     public Gladiator(String name, Integer health, Integer rage, Integer damageHigh, Integer damageLow){
         this.name = name;
@@ -17,7 +18,6 @@ public class Gladiator {
     }
 
     public void attack(Gladiator defender){
-        Random rand = new Random();
         int  hit = rand.nextInt(this.damageHigh) + this.damageLow;
         int luck = rand.nextInt(100) + 1;
         if( luck <= this.rage){
@@ -28,11 +28,21 @@ public class Gladiator {
             this.rage += 15;
             defender.health -= hit;
         }
+    }
 
-
-
-
-        defender.health -= 10;
+    public  void heal(){
+        if (this.rage >= 10){
+            if (this.health.equals(100)){
+                this.health = 100;
+            }else {
+                this.health += 5;
+            }
+            if (this.rage.equals(0)){
+                this.rage = 0;
+            }else {
+                this.rage -= 10;
+            }
+        }
     }
 
 }
