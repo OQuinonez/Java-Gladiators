@@ -45,4 +45,22 @@ public class Gladiator {
         }
     }
 
+    public void rage() {
+        if (this.rage >= 100){
+            this.rage = 100;
+        }else {
+            this.rage += 15;
+        }
+    }
+
+    public boolean is_alive() {
+        if (this.health <= 0){
+            this.health = 0;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }
