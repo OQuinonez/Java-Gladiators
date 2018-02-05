@@ -63,13 +63,14 @@ public class Main {
 
     public static void main(String[] args){
         Random rand = new Random();
-        int turn = 0;
+        int turn = 1;
         int highHit = rand.nextInt(25) + 20;
         int lowHit = rand.nextInt(8) + 3;
         Gladiator player1 = new Gladiator("Ken", 150, 0, rand.nextInt(25) + 20, rand.nextInt(8) + 3);
         Gladiator player2 = new Gladiator("Ryu", 150, 0, rand.nextInt(25) + 20, rand.nextInt(8) + 3);
         System.out.println("Welcome to the Gladiator Game!");
         System.out.println("Press 1 to attack, 2 to heal, and 3 to skip your turn for extra rage.  ");
+        System.out.println("Ken you're first");
         healthRage(player1, player2);
         battle(player1, player2, turn);
 
